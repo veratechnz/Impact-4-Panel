@@ -23,7 +23,7 @@
 			width: 420px;
 			margin: 2%;
 			background: url('img/panel.jpg');
-			box-shadow: 5px 5px 5px #888888;
+			box-shadow: 4px 4px 4px #BFC0C2;
 		}
 
 		.d-font{
@@ -35,8 +35,8 @@
 			text-align: center;
 			font-size: 26px;
 			color: #fff;
-			/*text-shadow: 1px 1px #707070;*/
-			font-weight: 600;
+			font-weight: 400;
+			line-height: 98%;
 		}
 
 
@@ -51,32 +51,80 @@
 		<div class="row">
 
 				<div class="span6">
-					<div class="box tailored">
-						<p class="d-font">"Tailored Research & Evaluation"</p>
+					<div class="box">
+						<p class="d-font" id="tailored">"Tailored Research & Evaluation"</p>
 					</div>
 				</div>
 
 				<div class="span6">
-					<div class="box broad">
+					<div class="box">
 						<p class="d-font">"A Broad Range Of Methodologies"</p>
 					</div>
 				</div>
 
 				<div class="span6">
-					<div class="box robust">
-						<p class="d-font">"A Robust Code Of Ethics"</p>
+					<div class="box">
+						<p class="d-font" id="">"A Robust Code Of Ethics"</p>
 					</div>
 				</div>
 
 				<div class="span6">
-					<div class="box effective">
-						<p class="d-font">"Effective Collaboration"</p>
+					<div class="box">
+						<p class="d-font" id="effective"></p>
 					</div>
 				</div>
 
 		</div>	
 
 	</div>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="js/text.js"></script>
+	<script>
+		$(function(){
+
+			//Here we use 4 function expressions to target specific panels in the effect:
+
+			var panelA = function(){
+
+				var list = ['"Tailored Research and Evaluation"', '"Research & Evaluation Project Designs That Are Tailored To Meet The Specific Needs Of Organisations"'];  // list of blurbs
+
+				var txt = $('#tailored');  // The container in which to render the list
+
+				var options = {
+				  duration: 8400,          // Time (ms) each blurb will remain on screen
+				  rearrangeDuration: 800, // Time (ms) a character takes to reach its position
+				  effect: 'random',        // Animation effect the characters use to appear
+				  centered: true           // Centers the text relative to its container
+				}
+
+				txt.textualizer(list, options); // textualize it!
+				txt.textualizer('start'); // start
+
+			}();
+
+			var panelD = function(){
+
+				var list = ['"Effective Collaboration"', '"Effective Collaboraton With Government Agencies, Local Providers, National Providers & Non-Government Organisations"'];  // list of blurbs
+
+				var txt = $('#effective');  // The container in which to render the list
+
+				var options = {
+				  duration: 7800,          // Time (ms) each blurb will remain on screen
+				  rearrangeDuration: 500, // Time (ms) a character takes to reach its position
+				  effect: 'random',        // Animation effect the characters use to appear
+				  centered: true           // Centers the text relative to its container
+				}
+
+				txt.textualizer(list, options); // textualize it!
+				txt.textualizer('start'); // start
+
+
+			}();
+
+
+
+		});
+	</script>
 </body>
 </html>
 
